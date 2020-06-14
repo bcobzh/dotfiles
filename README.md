@@ -26,6 +26,7 @@
 Now you can user "dotfiles" alias ex: 
 
 ~~~
+dotfiles config credential.helper 'store'
 cd .config
 dotfiles add fish
 dotfiles commit
