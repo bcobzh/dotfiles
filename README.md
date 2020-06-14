@@ -1,5 +1,4 @@
-# My dofiles
-
+# My dotfiles
 
 ## Howto 
 
