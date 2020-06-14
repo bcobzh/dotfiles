@@ -1,0 +1,146 @@
+[colors]
+background = #222
+background-alt = #444
+foreground = #dfdfdf
+foreground-alt = #888
+primary = #ffb52a
+secondary = #e60053
+alert = #bd2c40
+
+[bar/main]
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev
+monitor = ${env:MONITOR:DP-1}
+width = 100%
+height = 2.5%
+radius = 6.0
+fixed-center = false
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+border-size = 0
+line-size = 2
+padding = 1
+module-margin = 1
+
+font-0 = "Noto Sans Mono:size=10;1"
+font-1 = "Noto Sans Mono:size=10;1"
+font-2 = "Noto Sans Symbols:size=10;1"
+font-3 = "Noto Sans Symbols2:size=10;1"
+
+modules-left = i3
+modules-center =
+modules-right = pulseaudio date
+
+tray-position = right
+tray-padding = 2
+tray-maxsize = 24
+
+[module/date]
+type = internal/date
+interval = 5
+
+date = "%a %d"
+date-alt = %a %b %d
+
+time = %H:%M
+time-alt = %H:%M%p
+
+format-prefix =
+format-prefix-foreground = ${colors.foreground-alt}
+format-underline = #0a6cf5
+
+label = %date% %time%
+
+[module/eth1]
+type = internal/network
+interface = eno1
+interval = 3.0
+
+format-connected-underline = #55aa55
+format-connected-prefix = "🖧 "
+format-connected-prefix-foreground = ${colors.foreground-alt}
+label-connected = %local_ip%
+
+format-disconnected =
+
+
+[module/pulseaudio]
+type = internal/pulseaudio
+
+; Interval for volume increase/decrease (in percent points)
+; Default: 5
+interval = 5
+format-volume = <ramp-volume> <label-volume>
+label-muted = 🔇 muted
+label-muted-foreground = #666
+
+; Only applies if <ramp-volume> is used
+ramp-volume-0 = 🔈
+ramp-volume-1 = 🔉
+ramp-volume-2 = 🔊
+
+; Right and Middle click (unreleased)
+click-right = pavucontrol &
+
+[module/title]
+type = internal/xwindow
+
+[module/ewmh]
+type = internal/xworkspaces
+pin-workspaces = true
+enable-scroll = false
+
+[module/i3]
+type = internal/i3
+
+; Only show workspaces defined on the same output as the bar
+;
+; Useful if you want to show monitor specific workspaces
+; on different bars
+;
+; Default: false
+
+; This will split the workspace name on ':'
+; Default: false
+strip-wsnumbers = true
+
+; Sort the workspaces by index instead of the default
+; sorting that groups the workspaces by output
+; Default: false
+index-sort = true
+
+; Create click handler used to focus workspace
+; Default: true
+; enable-click = false
+
+; Create scroll handlers used to cycle workspaces
+; Default: true
+enable-scroll = false
+
+; Wrap around when reaching the first/last workspace
+; Default: true
+; wrapping-scroll = false
+
+; Set the scroll cycle direction 
+; Default: true
+reverse-scroll = false
+
+; Use fuzzy (partial) matching on labels when assigning 
+; icons to workspaces
+; Example: code;♚ will apply the icon to all workspaces 
+; containing 'code' in the label
+; Default: false
+;fuzzy-match = true
+
+label-focused = %index%
+label-focused-foreground = #ffffff
+label-focused-background = #3f3f3f
+label-focused-underline = #fba922
+label-focused-padding = 4
+;--------------------------------------
+;    end i3
+;--------------------------------------
+
+; vim:ft=dosini

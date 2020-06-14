@@ -1,0 +1,101 @@
+// =============================================================================
+//
+// Waybar configuration
+//
+// Configuration reference: https://github.com/Alexays/Waybar/wiki/Configuration
+// =============================================================================
+
+{
+    // -------------------------------------------------------------------------
+    // Global configuration
+    // -------------------------------------------------------------------------
+
+    "layer": "top",
+
+    "position": "top",
+
+    // If height property would be not present, it'd be calculated dynamically
+    "height": 20,
+
+    "modules-left": [
+        "sway/workspaces",
+        "sway/mode"
+    ],
+    "modules-center": [
+
+    ],
+    "modules-right": [
+        "battery",
+	"pulseaudio",
+        "clock",
+        "tray"
+    ],
+
+
+    // -------------------------------------------------------------------------
+    // Modules
+    // -------------------------------------------------------------------------
+    "sway/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "format": "{name}"
+    },
+
+    "sway/mode": {
+        "format": "<span style=\"italic\">{}</span>", // Icon: expand-arrows-alt
+        "tooltip": false
+    },
+    "tray": {
+        //"icon-size": 21,
+        "spacing": 10
+    },
+
+    "sway/window": {
+        "format": "{}",
+        "max-length": 120
+    },
+
+    "battery": {
+        "interval": 10,
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        // Connected to AC
+        "format": "  {icon}  {capacity}%", // Icon: bolt
+        // Not connected to AC
+        "format-discharging": "{icon}  {capacity}%",
+        "format-icons": [
+            "", // Icon: battery-full
+            "", // Icon: battery-three-quarters
+            "", // Icon: battery-half
+            "", // Icon: battery-quarter
+            ""  // Icon: battery-empty
+        ],
+        "tooltip": true
+    },
+
+    "clock": {
+        "tooltip-format": "{:%Y-%m-%d | %H:%M}",
+        "format-alt": "{:%Y-%m-%d}"
+    },
+
+"pulseaudio": {
+    "format": "{volume}% {icon}",
+    "format-bluetooth": "{volume}% {icon}",
+    "format-muted": "",
+    "format-icons": {
+        "headphone": "🔉",
+        "hands-free": "",
+        "headset": "",
+        "phone": "",
+        "portable": "",
+        "car": "",
+        "default": ["", ""]
+    },
+    "scroll-step": 1,
+    "on-click": "pavucontrol"
+}
+
+
+}
