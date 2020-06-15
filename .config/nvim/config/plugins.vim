@@ -36,10 +36,10 @@ Plug 'dag/vim-fish'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 
-" Plug 'chriskempson/base16-vim'
-Plug 'gruvbox-community/gruvbox'
-Plug 'sainnhe/gruvbox-material'
-Plug 'sheerun/vim-polyglot'
-Plug 'phanviet/vim-monokai-pro'
+Plug 'chriskempson/base16-vim'
+"Plug 'gruvbox-community/gruvbox'
+"Plug 'sainnhe/gruvbox-material'
+"Plug 'sheerun/vim-polyglot'
+"Plug 'phanviet/vim-monokai-pro'
 
 call plug#end()
