@@ -21,9 +21,17 @@ setenv NAME "b.couloigner"
 setenv EMAIL b.couloigner@gmail.com
 set PATH $PATH ~/.cargo/bin ~/.local/bin/
 
+
 # Fish should not add things to clipboard when killing
 # See https://github.com/fish-shell/fish-shell/issues/772
 set FISH_CLIPBOARD_CMD "cat"
+
+function fish_user_key_bindings
+	bind \cz 'fg>/dev/null ^/dev/null'
+	if functions -q fzf_key_bindings
+		fzf_key_bindings
+	end
+end
 
 function fish_prompt
 	set_color brblack

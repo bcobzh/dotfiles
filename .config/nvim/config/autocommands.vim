@@ -21,6 +21,9 @@ endif
 au Filetype rust source ~/.config/nvim/scripts/spacetab.vim
 au Filetype rust set colorcolumn=100
 
+autocmd Filetype rmd map <F5> :!echo<space>"require(rmarkdown);<space>require(reticulate);<space>render('<c-r>%')"\|<space>R<space>--vanilla<enter>
+
+
 " Help filetype detection
 autocmd BufRead *.plot set filetype=gnuplot
 autocmd BufRead *.md set filetype=markdown
@@ -31,5 +34,17 @@ autocmd BufRead *.xlsx.axlsx set filetype=ruby
 
 " Script plugins
 autocmd Filetype html,xml,xsl,php source ~/.config/nvim/scripts/closetag.vim
+
+" <leader><leader> toggles between buffers
+nnoremap <leader><leader> <c-^>
+
+" <leader>, shows/hides hidden characters
+nnoremap <leader>, :set invlist<cr>
+
+" <leader>q shows stats
+nnoremap <leader>q g<c-g>
+
+" Keymap for replacing up to next _ or -
+noremap <leader>m ct_
 
 

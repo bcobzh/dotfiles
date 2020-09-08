@@ -16,6 +16,8 @@ nnoremap <right> :bn<CR>
 " Move by line
 nnoremap j gj
 nnoremap k gk
+" nnoremap <Leader>pv :30Vexplore<CR>
+nnoremap <Leader>pv :20Lexplore<CR>
 "
 "
 " =============================================================================
@@ -30,6 +32,7 @@ map sh <C-w>h
 map sk <C-w>k
 map sj <C-w>j
 map sl <C-w>l
+map sr <C-w>r
 
 " Switch tab
 nmap <S-Tab> :tabprev<Return>
@@ -37,8 +40,8 @@ nmap <Tab> :tabnext<Return>
 
 
 " Open hiotkeys
-map <C-p> :Files<CR>
-nmap <leader>; :Buffers<CR>
+"map <C-p> :Files<CR>
+"nmap <leader>; :Buffers<CR>
 
 " Quick-save
 nmap <leader>w :w<CR>
