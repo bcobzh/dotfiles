@@ -13,13 +13,16 @@ else
 	abbr -a lll 'ls -la'
 end
 
+abbr -a k kubectl
+abbr -a kns kubens
+abbr -a kct kubectx
 
 # Set envvars since we don't have .pam_environment
 setenv EDITOR nvim
 setenv BROWSER links
 setenv NAME "b.couloigner"
 setenv EMAIL b.couloigner@gmail.com
-set PATH $PATH ~/.cargo/bin ~/.local/bin/
+set PATH $PATH ~/.cargo/bin ~/.local/bin/ ~/.npm-global/bin/
 
 
 # Fish should not add things to clipboard when killing

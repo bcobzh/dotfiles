@@ -2,6 +2,9 @@
 # VERSION: 3.0
 SETUVAR __fish_initialized:3100
 SETUVAR _fish_abbr_dotfiles:git\x20\x2d\x2dgit\x2ddir\x3d/home/benoit/dotfiles\x20\x2d\x2dwork\x2dtree\x3d/home/benoit
+SETUVAR _fish_abbr_k:kubectl
+SETUVAR _fish_abbr_kct:kubectx
+SETUVAR _fish_abbr_kns:kubens
 SETUVAR _fish_abbr_l:exa
 SETUVAR _fish_abbr_ll:exa\x20\x2dl
 SETUVAR _fish_abbr_lll:exa\x20\x2dla
