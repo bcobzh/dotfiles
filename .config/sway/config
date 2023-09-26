@@ -18,9 +18,10 @@ set $term alacritty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-# set $menu dmenu_path | dmenu | xargs swaymsg exec --
-set $menu dmenu_path | wofi --dmenu | xargs swaymsg exec --
+set $menu dmenu_path | dmenu | xargs swaymsg exec --
+# set $menu dmenu_path | wofi --dmenu | xargs swaymsg exec --
 
+default_border pixel 2 # disable window titlebar
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
@@ -68,10 +69,10 @@ set $menu dmenu_path | wofi --dmenu | xargs swaymsg exec --
     bindsym $mod+Return exec $term
 
     # Kill focused window
-    bindsym $mod+dollar kill
+    bindsym $mod+Shift+q kill
 
     # Start your launcher
-    bindsym $mod+Menu exec $menu
+    bindsym $mod+p exec $menu
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -157,9 +158,9 @@ bindsym $mod+Shift+agrave move container to workspace $ws10
     bindsym $mod+b splith
     bindsym $mod+v splitv
     # Switch the current container between different layout styles
-    # bindsym $mod+s layout stacking
-    # bindsym $mod+w layout tabbed
-    # bindsym $mod+e layout toggle split
+    bindsym $mod+s layout stacking
+    bindsym $mod+w layout tabbed
+    bindsym $mod+e layout toggle split
 
     # Make the current focus fullscreen
     bindsym $mod+f fullscreen
@@ -213,23 +214,23 @@ bindsym $mod+r mode "resize"
 # Status Bar:
 #
 # Read `man 5 sway-bar` for more information about this section.
-#bar {
-#     swaybar_command waybar
-#    #position top
-#
-#    ## When the status_command prints a new line to stdout, swaybar updates.
-#    ## The default just shows the current date and time.
-#    #status_command while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done
-#
-#    #colors {
-#    #    statusline #ffffff
-#    #    background #323232
-#    #    inactive_workspace #32323200 #32323200 #5c5c5c
-#    #}
-#}
-#
+bar {
+     swaybar_command waybar
+    position top
+
+    ## When the status_command prints a new line to stdout, swaybar updates.
+    ## The default just shows the current date and time.
+    status_command while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done
+
+    colors {
+        statusline #ffffff
+        background #323232
+        inactive_workspace #32323200 #32323200 #5c5c5c
+    }
+}
+
 input * {
-    xkb_layout "fr,us"
+    xkb_layout "fr"
     xkb_options "grp:win_space_toggle"
 }
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
@@ -255,10 +256,11 @@ input * xkb_numlock enable
 # bco  lauchers
 bindsym $mod w exec firefox
 # include /etc/sway/config.d/*
-exec_always --no-startup-id waybar
+exec_always --no-startup-id 'waybar -b bar-0'
 exec_always --no-startup-id 'numlockx on'
+exec_always --no-startup 'xmodmap -e "keycode 49 = Escape"'
+
 # hide/unhide i3status bar
 #bindsym $mod+m bar mode toggle
 exec_always --no-startup-id firefox
-exec_always --no-startup-id alacritty
 exec --no-startup-id i3-msg 'workspace 2; exec thunderbird; workspace 1'

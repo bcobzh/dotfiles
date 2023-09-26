@@ -1,7 +1,8 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
-SETUVAR __fish_initialized:3100
+SETUVAR __fish_initialized:3400
 SETUVAR _fish_abbr_dotfiles:git\x20\x2d\x2dgit\x2ddir\x3d/home/benoit/dotfiles\x20\x2d\x2dwork\x2dtree\x3d/home/benoit
+SETUVAR _fish_abbr_gitgraph:git\x20log\x20\x2d\x2doneline\x20\x2d\x2dgraph\x20\x2d\x2ddecorate\x20\x2d\x2dall
 SETUVAR _fish_abbr_k:kubectl
 SETUVAR _fish_abbr_kct:kubectx
 SETUVAR _fish_abbr_kns:kubens
@@ -9,6 +10,7 @@ SETUVAR _fish_abbr_l:exa
 SETUVAR _fish_abbr_ll:exa\x20\x2dl
 SETUVAR _fish_abbr_lll:exa\x20\x2dla
 SETUVAR _fish_abbr_ls:exa
+SETUVAR _fish_abbr_nv:neovide
 SETUVAR _fish_abbr_vi:nvim
 SETUVAR _fish_abbr_vim:nvim
 SETUVAR _fish_abbr_vimdiff:nvim\x20\x2dd
@@ -41,4 +43,5 @@ SETUVAR fish_pager_color_completion:normal
 SETUVAR fish_pager_color_description:B3A06D\x1eyellow
 SETUVAR fish_pager_color_prefix:white\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
 SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
+SETUVAR fish_pager_color_selected_background:\x2dr
 SETUVAR fish_user_paths:/home/benoit/\x2efzf/bin

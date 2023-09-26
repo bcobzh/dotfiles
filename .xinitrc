@@ -32,7 +32,7 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 # DWM status bar
-#/home/benoit/tools/DWM/dwm-bar/dwm_bar.sh &
+/home/benoit/tools/DWM/dwm-bar/dwm_bar.sh &
 # slstatus &
 # keyboad
 # setxkbmap fr &
@@ -43,6 +43,14 @@ picom -f &
 numlockx &
 udiskie &
 xmodmap -e "keycode 49 = Escape"
+#xmodmap ~/.mouseconfig
+# passe capslock à ESC, undo : setxkbmap -option
+setxkbmap -option caps:escape
+# vitesse de répétion quand une touche est pressée
+xset r rate 300 50
 # Loop
+while true; do
+    dwm >/dev/null 2>&1
+done
 # execute DWM
-exec bspwm
+exec /usr/local/bin/dwm
