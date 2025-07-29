@@ -1,47 +1,33 @@
 return {
     {
-        'nvim-telescope/telescope.nvim',
-        tag = '0.1.0',
-        dependencies = { { 'nvim-lua/plenary.nvim' } }
-    },
-    {
-        'rose-pine/neovim',
-        as = 'rose-pine',
+        "catppuccin/nvim",
+        lazy = false,
+        name = "catppuccin",
+        priority = 1000,
         config = function()
-            vim.cmd('colorscheme rose-pine')
+            require("catppuccin").setup()
+            vim.cmd.colorscheme "catppuccin-mocha"
         end
     },
     'nvim-treesitter/playground',
-    'theprimeagen/harpoon',
     'mbbill/undotree',
-    'tpope/vim-fugitive',
+    'junegunn/vim-easy-align',
     'hashivim/vim-terraform',
-    'tzachar/local-highlight.nvim',
-    'allen-mack/nvim-table-md',
+    -- 'tzachar/local-highlight.nvim',
     'm4xshen/autoclose.nvim',
-    'nvim-lualine/lualine.nvim',
+    'godlygeek/tabular',
+    'ggandor/leap.nvim',
+    { 'towolf/vim-helm',         ft = 'helm' },
+    --{ dir = '~/plugins/tuto.nvim' },
+    { 'akinsho/toggleterm.nvim', version = "*", opts = { open_mapping = [[<c-t>]] } },
 
-    {
-        'VonHeikemen/lsp-zero.nvim',
-        dependencies = {
-            -- LSP Support
-            { 'neovim/nvim-lspconfig' },
-            { 'williamboman/mason.nvim' },
-            { 'williamboman/mason-lspconfig.nvim' },
+    'folke/zen-mode.nvim',
+    'taybart/b64.nvim',
+    -- colorscheme
+    'folke/tokyonight.nvim',
+    'bluz71/vim-nightfly-colors',
+    'rebelot/kanagawa.nvim',
+    { 'projekt0n/github-nvim-theme', name = 'github-theme' },
 
-            -- Autocompletion
-            { 'hrsh7th/nvim-cmp' },
-            { 'hrsh7th/cmp-buffer' },
-            { 'hrsh7th/cmp-path' },
-            { 'saadparwaiz1/cmp_luasnip' },
-            { 'hrsh7th/cmp-nvim-lsp' },
-            { 'hrsh7th/cmp-nvim-lua' },
 
-            -- Snippets
-            { 'L3MON4D3/LuaSnip' },
-            { 'rafamadriz/friendly-snippets' },
-        }
-    },
-
-    'folke/zen-mode.nvim'
 }
